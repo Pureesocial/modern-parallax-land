@@ -190,14 +190,14 @@ function App() {
       <section className="py-20 md:py-32 relative overflow-hidden bg-gradient-to-b from-background via-muted/20 to-background">
         <div className="container mx-auto px-6">
           <FadeInSection>
-            <div className="text-center mb-16">
-              <Badge className="mb-6 px-4 py-2 text-xs font-medium bg-accent/10 text-accent border-accent/20">
+            <div className="text-center mb-20">
+              <Badge className="mb-6 px-5 py-2 text-xs font-semibold bg-accent/10 text-accent border-accent/20">
                 DASHBOARD PREVIEW
               </Badge>
-              <h3 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
+              <h3 className="text-3xl md:text-5xl font-bold mb-6 text-foreground leading-tight">
                 Dashboard yang <span className="text-gradient">Intuitif</span>
               </h3>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 Pantau aktivitas tim, kelola absensi, approval cuti, hingga payroll—semua dalam satu platform
               </p>
             </div>
@@ -217,14 +217,14 @@ function App() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
               >
-                <Badge className="mb-6 px-4 py-2 text-xs font-medium bg-primary/10 text-primary border-primary/20">
+                <Badge className="mb-6 px-5 py-2 text-xs font-semibold bg-primary/10 text-primary border-primary/20">
                   FEATURES
                 </Badge>
               </motion.div>
-              <h3 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+              <h3 className="text-4xl md:text-5xl font-bold mb-6 text-foreground leading-tight">
                 Semua yang Tim Anda Butuhkan
               </h3>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 Tools lengkap untuk mengelola HR dengan lebih efektif dan terstruktur
               </p>
             </div>
@@ -323,14 +323,14 @@ function App() {
       <ParallaxSection speed={0.6} className="py-32 bg-muted/20" id="cara-kerja">
         <div className="container mx-auto px-6">
           <FadeInSection>
-            <div className="text-center mb-16">
-              <Badge className="mb-6 px-4 py-2 text-xs font-medium bg-accent/10 text-accent border-accent/20">
+            <div className="text-center mb-20">
+              <Badge className="mb-6 px-5 py-2 text-xs font-semibold bg-accent/10 text-accent border-accent/20">
                 HOW IT WORKS
               </Badge>
-              <h3 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+              <h3 className="text-4xl md:text-5xl font-bold mb-6 text-foreground leading-tight">
                 Mulai dalam 3 Langkah
               </h3>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 Setup yang simpel tanpa ribet, langsung produktif
               </p>
             </div>
@@ -338,7 +338,7 @@ function App() {
 
           <div className="max-w-5xl mx-auto">
             <div className="relative">
-              <div className="absolute left-8 top-20 bottom-20 w-0.5 bg-gradient-to-b from-primary via-accent to-primary hidden md:block" />
+              <div className="absolute left-8 top-24 bottom-16 w-0.5 bg-gradient-to-b from-primary via-accent to-primary hidden md:block" />
               
               {[
                 {
@@ -365,23 +365,23 @@ function App() {
               ].map((item, i) => (
                 <FadeInSection key={i} delay={i * 0.15}>
                   <motion.div
-                    className="relative mb-12 last:mb-0"
+                    className={`relative ${i < 2 ? 'mb-16' : ''}`}
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: i * 0.1 }}
                   >
-                    <div className="md:pl-24">
+                    <div className="md:pl-24 pl-0">
                       <motion.div
                         whileHover={{ scale: 1.02, x: 8 }}
                         transition={{ type: "spring", stiffness: 300 }}
                       >
                         <Card className="bg-card/80 backdrop-blur-sm border-border p-8 hover:border-primary/40 hover:shadow-2xl transition-all duration-300 relative overflow-hidden group">
-                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-full blur-2xl" />
                           
                           <div className="absolute -left-8 top-1/2 -translate-y-1/2 hidden md:flex">
                             <motion.div 
-                              className="w-16 h-16 rounded-md bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-xl shadow-xl shadow-primary/30"
+                              className="w-16 h-16 rounded-sm bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-xl shadow-xl shadow-primary/30"
                               whileHover={{ rotate: 360, scale: 1.1 }}
                               transition={{ duration: 0.6 }}
                             >
@@ -389,20 +389,25 @@ function App() {
                             </motion.div>
                           </div>
 
-                          <div className="flex items-start justify-between mb-4">
-                            <div>
-                              <div className="flex items-center gap-3 mb-2">
-                                <h4 className="text-2xl font-bold text-foreground">{item.title}</h4>
-                                <Badge className="bg-primary/10 text-primary border-primary/20 text-xs">
-                                  {item.highlight}
-                                </Badge>
+                          <div className="relative z-10">
+                            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
+                              <div className="flex-1">
+                                <div className="flex flex-wrap items-center gap-3 mb-2">
+                                  <div className="md:hidden w-12 h-12 rounded-sm bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-primary/30">
+                                    {item.step}
+                                  </div>
+                                  <h4 className="text-2xl font-bold text-foreground">{item.title}</h4>
+                                  <Badge className="bg-primary/10 text-primary border-primary/20 text-xs font-semibold px-3 py-1">
+                                    {item.highlight}
+                                  </Badge>
+                                </div>
+                                <p className="text-sm text-primary font-medium">{item.subtitle}</p>
                               </div>
-                              <p className="text-sm text-primary font-medium">{item.subtitle}</p>
                             </div>
+                            <p className="text-muted-foreground leading-relaxed text-base">
+                              {item.description}
+                            </p>
                           </div>
-                          <p className="text-muted-foreground leading-relaxed">
-                            {item.description}
-                          </p>
                         </Card>
                       </motion.div>
                     </div>
@@ -417,14 +422,14 @@ function App() {
       <ParallaxSection speed={0.9} className="py-32" id="paket">
         <div className="container mx-auto px-6">
           <FadeInSection>
-            <div className="text-center mb-16">
-              <Badge className="mb-6 px-4 py-2 text-xs font-medium bg-primary/10 text-primary border-primary/20">
+            <div className="text-center mb-20">
+              <Badge className="mb-6 px-5 py-2 text-xs font-semibold bg-primary/10 text-primary border-primary/20">
                 PRICING
               </Badge>
-              <h3 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+              <h3 className="text-4xl md:text-5xl font-bold mb-6 text-foreground leading-tight">
                 Paket yang <span className="text-gradient">Fleksibel</span>
               </h3>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
                 Pilih paket sesuai ukuran dan kebutuhan tim Anda
               </p>
             </div>
