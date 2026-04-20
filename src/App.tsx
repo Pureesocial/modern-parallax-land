@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { ParallaxSection } from '@/components/ParallaxSection'
 import { FadeInSection } from '@/components/FadeInSection'
+import { DashboardMockup } from '@/components/DashboardMockup'
 import { 
   ArrowRight, 
   Lightning,
@@ -210,6 +211,26 @@ function App() {
             ))}
           </motion.div>
         </motion.div>
+      </section>
+
+      <section className="py-20 md:py-32 relative overflow-hidden bg-gradient-to-b from-background via-muted/20 to-background">
+        <div className="container mx-auto px-6">
+          <FadeInSection>
+            <div className="text-center mb-16">
+              <Badge className="mb-6 px-4 py-2 text-xs font-medium bg-accent/10 text-accent border-accent/20">
+                DASHBOARD PREVIEW
+              </Badge>
+              <h3 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
+                Dashboard yang <span className="text-gradient">Intuitif</span>
+              </h3>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Pantau aktivitas tim, kelola absensi, approval cuti, hingga payroll—semua dalam satu platform
+              </p>
+            </div>
+          </FadeInSection>
+          
+          <DashboardMockup />
+        </div>
       </section>
 
       <ParallaxSection speed={0.8} className="py-32 relative" id="fitur">

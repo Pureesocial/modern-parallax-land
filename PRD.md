@@ -19,6 +19,13 @@ This is a marketing-focused SaaS landing page designed to communicate the platfo
 - **Progression**: User lands → sees headline + badge → understands value prop → clicks CTA or scrolls to learn more
 - **Success criteria**: Clear messaging, high-contrast CTAs, professional visual treatment
 
+### Dashboard Preview Section
+- **Functionality**: Interactive dashboard mockup showing actual UI preview with animations
+- **Purpose**: Build credibility by showing the actual product interface and key features visually
+- **Trigger**: Scroll into viewport with 3D perspective entrance animation
+- **Progression**: User scrolls → dashboard animates into view → tabs and cards interact → chart bars animate → user gains confidence in product quality
+- **Success criteria**: Realistic UI representation, smooth animations, clear value demonstration
+
 ### Features/Benefits Section
 - **Functionality**: Three-column grid showcasing key outcomes (speed, collaboration, compliance)
 - **Purpose**: Build trust by highlighting real outcomes instead of just listing features
