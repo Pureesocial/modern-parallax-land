@@ -7,6 +7,7 @@ import { ParallaxSection } from '@/components/ParallaxSection'
 import { FadeInSection } from '@/components/FadeInSection'
 import { DashboardMockup } from '@/components/DashboardMockup'
 import { DemoApp } from '@/components/DemoApp'
+import { ResponsiveShowcase } from '@/components/ResponsiveShowcase'
 import { 
   ArrowRight, 
   Lightning,
@@ -52,6 +53,8 @@ function App() {
       <AnimatePresence>
         {showDemo && <DemoApp onClose={() => setShowDemo(false)} />}
       </AnimatePresence>
+
+      <ResponsiveShowcase />
 
       <motion.div 
         className="fixed inset-0 -z-10 overflow-hidden"
