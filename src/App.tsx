@@ -8,6 +8,7 @@ import { FadeInSection } from '@/components/FadeInSection'
 import { DashboardMockup } from '@/components/DashboardMockup'
 import { DemoApp } from '@/components/DemoApp'
 import { ResponsiveShowcase } from '@/components/ResponsiveShowcase'
+import { ChatWidget } from '@/components/ChatWidget'
 import { 
   ArrowRight, 
   Lightning,
@@ -753,6 +754,8 @@ function App() {
           </div>
         </div>
       </footer>
+
+      <ChatWidget />
     </div>
   )
 }
