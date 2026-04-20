@@ -35,14 +35,14 @@ export function DashboardMockup() {
     >
       <div className="relative">
         <motion.div
-          className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-3xl"
+          className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-sm blur-3xl"
           animate={{
             opacity: [0.3, 0.6, 0.3],
           }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         />
         
-        <Card className="relative bg-gradient-to-br from-card via-card to-muted/30 border-2 border-border/50 shadow-2xl overflow-hidden">
+        <Card className="relative bg-gradient-to-br from-card via-card to-muted/30 border-2 border-border/50 shadow-2xl overflow-hidden rounded-sm">
           <div className="bg-gradient-to-br from-muted/40 to-background/40 backdrop-blur-sm p-5 border-b border-border/50 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="flex gap-1.5">
@@ -52,7 +52,7 @@ export function DashboardMockup() {
               </div>
               <span className="ml-3 text-sm font-semibold text-foreground">Preview Dashboard</span>
             </div>
-            <Badge className="bg-primary/10 text-primary border-primary/30 text-xs font-medium px-3 py-1.5">
+            <Badge className="bg-primary/10 text-primary border-primary/30 text-xs font-medium px-3 py-1 rounded-sm">
               <CheckCircle size={12} className="mr-1.5" weight="fill" />
               HCM ready
             </Badge>
@@ -75,7 +75,7 @@ export function DashboardMockup() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
                   className={`
-                    flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium transition-all
+                    flex items-center gap-2 px-3 py-2 rounded-sm text-xs font-medium transition-all
                     ${tab.active 
                       ? 'bg-primary/10 text-primary border border-primary/30' 
                       : 'text-muted-foreground hover:bg-muted/50 hover:text-foreground'
@@ -95,7 +95,7 @@ export function DashboardMockup() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-                <Card className="bg-gradient-to-br from-primary/5 to-transparent border-primary/20 p-6">
+                <Card className="bg-gradient-to-br from-primary/5 to-transparent border-primary/20 p-6 rounded-sm">
                   <div className="flex items-start justify-between mb-5">
                     <div>
                       <p className="text-xs text-muted-foreground mb-1.5 flex items-center gap-2">
@@ -114,11 +114,11 @@ export function DashboardMockup() {
                         whileInView={{ height: bar.height }}
                         viewport={{ once: true }}
                         transition={{ delay: bar.delay, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                        className="flex-1 bg-gradient-to-t from-primary to-primary/60 rounded-t relative group"
+                        className="flex-1 bg-gradient-to-t from-primary to-primary/60 rounded-t-sm relative group"
                         whileHover={{ opacity: 0.8 }}
                       >
                         <motion.div 
-                          className="absolute -top-7 left-1/2 -translate-x-1/2 bg-foreground text-background text-xs px-2.5 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap font-medium shadow-lg"
+                          className="absolute -top-7 left-1/2 -translate-x-1/2 bg-foreground text-background text-xs px-2.5 py-1 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap font-medium shadow-lg"
                           initial={{ y: 5 }}
                           whileHover={{ y: 0 }}
                         >
@@ -163,7 +163,7 @@ export function DashboardMockup() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
               >
-                <Card className="bg-gradient-to-br from-accent/5 to-transparent border-accent/20 p-6 h-full">
+                <Card className="bg-gradient-to-br from-accent/5 to-transparent border-accent/20 p-6 h-full rounded-sm">
                   <div className="flex items-center justify-between mb-5">
                     <p className="text-xs text-muted-foreground flex items-center gap-2">
                       <CalendarBlank size={14} weight="duotone" className="text-accent" />
