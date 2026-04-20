@@ -9,6 +9,7 @@ import { DashboardMockup } from '@/components/DashboardMockup'
 import { DemoApp } from '@/components/DemoApp'
 import { ResponsiveShowcase } from '@/components/ResponsiveShowcase'
 import { ChatWidget } from '@/components/ChatWidget'
+import { InteractiveBackground } from '@/components/InteractiveBackground'
 import { 
   ArrowRight, 
   Lightning,
@@ -26,7 +27,6 @@ function App() {
   const heroRef = useRef<HTMLDivElement>(null)
   const featuresRef = useRef<HTMLDivElement>(null)
   const isHeroInView = useInView(heroRef, { once: false, amount: 0.3 })
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [showDemo, setShowDemo] = useState(false)
   
   const { scrollYProgress } = useScroll({
@@ -38,17 +38,6 @@ function App() {
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0])
   const heroScale = useTransform(scrollYProgress, [0, 0.3], [1, 0.95])
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth - 0.5) * 20,
-        y: (e.clientY / window.innerHeight - 0.5) * 20
-      })
-    }
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
-
   return (
     <div ref={containerRef} className="relative w-full overflow-x-hidden bg-background">
       <AnimatePresence>
@@ -57,33 +46,7 @@ function App() {
 
       <ResponsiveShowcase />
 
-      <motion.div 
-        className="fixed inset-0 -z-10 overflow-hidden"
-        style={{
-          x: mousePosition.x,
-          y: mousePosition.y,
-        }}
-        transition={{ type: "spring", stiffness: 50, damping: 30 }}
-      >
-        <div className="absolute inset-0 hero-gradient" />
-        <div className="absolute inset-0 grid-pattern opacity-20" />
-        <motion.div
-          className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute bottom-1/3 left-1/3 w-96 h-96 bg-accent/5 rounded-full blur-3xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.5, 0.3, 0.5],
-          }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </motion.div>
+      <InteractiveBackground />
 
       <motion.header 
         className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-xl border-b border-border/50"

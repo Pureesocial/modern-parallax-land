@@ -92,7 +92,7 @@ Professional, highly legible typefaces optimized for B2B content consumption and
   - Small Text/Labels: Inter Medium/14px/normal letter-spacing - UI and metadata
 
 ## Animations
-Animations should enhance professionalism and guide attention without being distracting. Subtle parallax on hero (0.5x speed), smooth fade-up on scroll reveal (300ms ease-out, triggered at 20% viewport). Hover states on buttons show gentle scale (1.02x) and shadow deepening (150ms). All animations respect reduced-motion preferences with instant transitions as fallback.
+Animations should enhance professionalism and guide attention without being distracting. The page features an **interactive particle network background** similar to GitHub Spark, where particles (nodes) connected by lines respond to mouse movement, creating a dynamic, modern atmosphere. Particles repel away from the cursor creating an organic, fluid interaction. A **smooth mouse follower glow** follows the cursor with spring physics (stiffness: 50, damping: 30). Subtle parallax on hero (0.5x speed), smooth fade-up on scroll reveal (300ms ease-out, triggered at 20% viewport). **Ripple effects** on cards when mouse moves over them add tactile feedback. Hover states on buttons show gentle scale (1.02x) and shadow deepening (150ms). All animations respect reduced-motion preferences with instant transitions as fallback.
 
 ## Component Selection
 - **Components**: 
