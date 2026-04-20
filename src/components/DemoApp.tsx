@@ -69,7 +69,7 @@ export function DemoApp({ onClose }: DemoAppProps) {
               transition={{ delay: 0.1 }}
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
+                <div className="w-10 h-10 rounded bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
                   <SquaresFour size={20} className="text-white" weight="fill" />
                 </div>
                 <div>

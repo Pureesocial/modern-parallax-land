@@ -61,7 +61,7 @@ function App() {
             transition={{ type: "spring", stiffness: 400 }}
           >
             <motion.div 
-              className="w-10 h-10 rounded-md bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg"
+              className="w-10 h-10 rounded bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg"
               whileHover={{ rotate: 5 }}
             >
               <Lightning size={20} className="text-white" weight="fill" />
@@ -264,7 +264,7 @@ function App() {
                 >
                   <Card className="bg-card/50 backdrop-blur-sm border-border/50 p-6 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 h-full group">
                     <motion.div 
-                      className={`w-12 h-12 rounded-md bg-${feature.color}/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}
+                      className={`w-12 h-12 rounded bg-${feature.color}/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform`}
                       whileHover={{ rotate: 5 }}
                     >
                       <feature.icon size={24} className={`text-${feature.color}`} weight="duotone" />
@@ -300,10 +300,10 @@ function App() {
               <FadeInSection key={i} delay={0.2 + i * 0.1}>
                 <motion.div
                   whileHover={{ scale: 1.03 }}
-                  className="text-center p-8 rounded-2xl bg-gradient-to-b from-muted/30 to-transparent border border-border/30 hover:border-primary/30 transition-all"
+                  className="text-center p-8 rounded bg-gradient-to-b from-muted/30 to-transparent border border-border/30 hover:border-primary/30 transition-all"
                 >
                   <motion.div 
-                    className="w-16 h-16 rounded-md bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center mb-5 mx-auto"
+                    className="w-16 h-16 rounded bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center mb-5 mx-auto"
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.6 }}
                   >
@@ -381,7 +381,7 @@ function App() {
                           
                           <div className="absolute -left-8 top-1/2 -translate-y-1/2 hidden md:flex">
                             <motion.div 
-                              className="w-16 h-16 rounded-sm bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-xl shadow-xl shadow-primary/30"
+                              className="w-16 h-16 rounded bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-xl shadow-xl shadow-primary/30"
                               whileHover={{ rotate: 360, scale: 1.1 }}
                               transition={{ duration: 0.6 }}
                             >
@@ -393,7 +393,7 @@ function App() {
                             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 mb-4">
                               <div className="flex-1">
                                 <div className="flex flex-wrap items-center gap-3 mb-2">
-                                  <div className="md:hidden w-12 h-12 rounded-sm bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-primary/30">
+                                  <div className="md:hidden w-12 h-12 rounded bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-primary/30">
                                     {item.step}
                                   </div>
                                   <h4 className="text-2xl font-bold text-foreground">{item.title}</h4>
@@ -594,7 +594,7 @@ function App() {
                     transition={{ duration: 0.5 }}
                     className="inline-block mb-6"
                   >
-                    <div className="w-20 h-20 rounded-md bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto shadow-xl shadow-primary/30">
+                    <div className="w-20 h-20 rounded bg-gradient-to-br from-primary to-accent flex items-center justify-center mx-auto shadow-xl shadow-primary/30">
                       <Lightning size={40} className="text-white" weight="fill" />
                     </div>
                   </motion.div>
@@ -666,7 +666,7 @@ function App() {
                 className="flex items-center gap-3 mb-4"
                 whileHover={{ scale: 1.02 }}
               >
-                <div className="w-12 h-12 rounded-md bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
+                <div className="w-12 h-12 rounded bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg">
                   <Lightning size={24} className="text-white" weight="fill" />
                 </div>
                 <h4 className="text-2xl font-bold text-foreground">Arkav</h4>
