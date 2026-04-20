@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -49,6 +49,21 @@ const devices: Device[] = [
 export function ResponsiveShowcase() {
   const [selectedDevice, setSelectedDevice] = useState<Device>(devices[2])
   const [isVisible, setIsVisible] = useState(false)
+  const isInIframe = window.self !== window.top
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isVisible) {
+        setIsVisible(false)
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [isVisible])
+
+  if (isInIframe) {
+    return null
+  }
 
   return (
     <>
