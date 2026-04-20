@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, useInView } from 'framer-motion'
+import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { ParallaxSection } from '@/components/ParallaxSection'
 import { FadeInSection } from '@/components/FadeInSection'
 import { DashboardMockup } from '@/components/DashboardMockup'
+import { DemoApp } from '@/components/DemoApp'
 import { 
   ArrowRight, 
   Lightning,
@@ -24,6 +25,7 @@ function App() {
   const featuresRef = useRef<HTMLDivElement>(null)
   const isHeroInView = useInView(heroRef, { once: false, amount: 0.3 })
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [showDemo, setShowDemo] = useState(false)
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -47,6 +49,10 @@ function App() {
 
   return (
     <div ref={containerRef} className="relative w-full overflow-x-hidden bg-background">
+      <AnimatePresence>
+        {showDemo && <DemoApp onClose={() => setShowDemo(false)} />}
+      </AnimatePresence>
+
       <motion.div 
         className="fixed inset-0 -z-10 overflow-hidden"
         style={{
@@ -181,6 +187,7 @@ function App() {
                 size="lg" 
                 variant="outline" 
                 className="border-2 border-border hover:bg-muted/50 hover:border-primary/30 text-lg px-10 py-7 font-medium backdrop-blur-sm"
+                onClick={() => setShowDemo(true)}
               >
                 Lihat Demo
               </Button>
@@ -649,6 +656,7 @@ function App() {
                         size="lg" 
                         variant="outline" 
                         className="border-2 border-primary text-primary hover:bg-primary hover:text-white text-lg px-12 py-7 font-medium backdrop-blur-sm"
+                        onClick={() => setShowDemo(true)}
                       >
                         Jadwalkan Demo
                       </Button>
