@@ -229,7 +229,7 @@ export function ChatWidget() {
                         <div className={`flex flex-col ${message.sender === 'user' ? 'items-end' : 'items-start'} max-w-[75%]`}>
                           <motion.div
                             whileHover={{ scale: 1.02 }}
-                            className={`px-4 py-3 rounded-2xl ${
+                            className={`px-4 py-3 rounded-md ${
                               message.sender === 'user'
                                 ? 'bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/20'
                                 : 'bg-card border border-border shadow-sm'
@@ -290,7 +290,7 @@ export function ChatWidget() {
                           <Headset size={16} weight="bold" />
                         </AvatarFallback>
                       </Avatar>
-                      <div className="bg-card border border-border px-5 py-3 rounded-2xl shadow-sm">
+                      <div className="bg-card border border-border px-5 py-3 rounded-md shadow-sm">
                         <div className="flex gap-1">
                           {[0, 1, 2].map((i) => (
                             <motion.div
