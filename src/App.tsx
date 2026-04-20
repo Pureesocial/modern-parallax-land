@@ -7,13 +7,9 @@ import { ParallaxSection } from '@/components/ParallaxSection'
 import { FadeInSection } from '@/components/FadeInSection'
 import { 
   ArrowRight, 
-  Calendar, 
-  MapPin, 
-  Trophy, 
-  Users, 
-  Rocket,
   Lightning,
-  Target
+  Target,
+  Users
 } from '@phosphor-icons/react'
 
 function App() {
@@ -31,23 +27,29 @@ function App() {
       <div className="fixed inset-0 hero-gradient -z-10" />
       <div className="fixed inset-0 grid-pattern opacity-30 -z-10" />
 
-      <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg border-b border-white/10">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-          <motion.h1 
-            className="text-2xl font-bold text-gradient"
+          <motion.div 
+            className="flex items-center gap-2"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            ARKAV
-          </motion.h1>
+            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+              <span className="text-white font-bold text-sm">✨</span>
+            </div>
+            <h1 className="text-xl font-bold text-foreground">Arkav</h1>
+          </motion.div>
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#about" className="text-sm font-medium text-white/80 hover:text-white transition-colors">About</a>
-            <a href="#schedule" className="text-sm font-medium text-white/80 hover:text-white transition-colors">Schedule</a>
-            <a href="#prizes" className="text-sm font-medium text-white/80 hover:text-white transition-colors">Prizes</a>
-            <Button className="bg-accent text-accent-foreground hover:bg-accent/90 glow-accent font-semibold">
-              Register Now
-              <ArrowRight className="ml-2" />
+            <a href="#fitur" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Fitur</a>
+            <a href="#solusi" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Solusi</a>
+            <a href="#cara-kerja" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Cara kerja</a>
+            <a href="#paket" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Paket</a>
+            <Button variant="outline" className="font-medium">
+              Login
+            </Button>
+            <Button className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold">
+              Mulai
             </Button>
           </nav>
         </div>
@@ -63,9 +65,9 @@ function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <Badge className="mb-6 px-6 py-2 text-sm font-semibold bg-primary/20 text-primary border-primary/30 backdrop-blur-sm">
+            <Badge className="mb-6 px-6 py-2 text-sm font-semibold bg-accent/10 text-accent border-accent/20">
               <Lightning className="mr-2" weight="fill" />
-              5TH ANNUAL COMPETITION
+              HCM + SaaS + Self-serve onboarding
             </Badge>
           </motion.div>
 
@@ -73,20 +75,22 @@ function App() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-foreground"
           >
-            Innovation
+            Satu platform untuk HR,
             <br />
-            <span className="text-gradient">Unleashed</span>
+            <span className="text-gradient">Absensi, Cuti, Payroll,</span>
+            <br />
+            dan laporan—siap dipakai.
           </motion.h2>
 
           <motion.p
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-xl md:text-2xl text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed"
           >
-            Join Indonesia's premier technology competition. Build, compete, and showcase your innovations.
+            Hilangkan ribet. Kelola tim secara lengkap. Mulai dari yang paling penting, kemudian pakai fitur lain sesuai kebutuhan.
           </motion.p>
 
           <motion.div
@@ -97,17 +101,17 @@ function App() {
           >
             <Button 
               size="lg" 
-              className="bg-accent text-accent-foreground hover:bg-accent/90 glow-accent text-lg px-8 py-6 font-bold group"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 font-bold group"
             >
-              Get Started
+              Lihat Paket
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" weight="bold" />
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-white/20 text-white hover:bg-white/10 text-lg px-8 py-6 font-semibold backdrop-blur-sm"
+              className="border-border hover:bg-secondary text-lg px-8 py-6 font-semibold"
             >
-              Learn More
+              Coba Trial Gratis!
             </Button>
           </motion.div>
 
@@ -115,19 +119,19 @@ function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1.2 }}
-            className="mt-20 grid grid-cols-3 gap-8 max-w-2xl mx-auto"
+            className="mt-20 flex flex-wrap items-center justify-center gap-6 max-w-3xl mx-auto text-sm text-muted-foreground"
           >
-            <div className="text-center">
-              <div className="text-4xl font-bold text-gradient mb-2">500+</div>
-              <div className="text-sm text-white/60 uppercase tracking-wider">Participants</div>
+            <div className="flex items-center gap-2">
+              <span className="text-foreground">✓</span>
+              <span>RBAC admin vs karyawan</span>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-gradient mb-2">$50K</div>
-              <div className="text-sm text-white/60 uppercase tracking-wider">Prize Pool</div>
+            <div className="flex items-center gap-2">
+              <span className="text-foreground">✓</span>
+              <span>UI seluruh template</span>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-gradient mb-2">48H</div>
-              <div className="text-sm text-white/60 uppercase tracking-wider">Duration</div>
+            <div className="flex items-center gap-2">
+              <span className="text-foreground">✓</span>
+              <span>Invoice email (optional)</span>
             </div>
           </motion.div>
         </motion.div>
@@ -136,11 +140,11 @@ function App() {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-            className="text-white/40"
+            className="text-muted-foreground"
           >
-            <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center p-2">
+            <div className="w-6 h-10 rounded-full border-2 border-border flex items-start justify-center p-2">
               <motion.div 
-                className="w-1.5 h-1.5 bg-white/60 rounded-full"
+                className="w-1.5 h-1.5 bg-primary rounded-full"
                 animate={{ y: [0, 12, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
               />
@@ -149,53 +153,52 @@ function App() {
         </div>
       </section>
 
-      <ParallaxSection speed={0.7} className="py-32">
+      <ParallaxSection speed={0.7} className="py-32" id="fitur">
         <div className="container mx-auto px-6">
           <FadeInSection>
             <div className="text-center mb-20">
-              <h3 className="text-5xl md:text-6xl font-bold mb-6">
-                What is <span className="text-gradient">ARKAV</span>?
+              <h3 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+                Apa yang tim kamu <span className="text-gradient">rasakan</span>
               </h3>
-              <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-                ARKAV is an annual technology competition that brings together the brightest minds 
-                to solve real-world challenges through innovation, creativity, and collaboration.
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Bukan janji kosong—ini ringkasan outcome yang biasanya dicari tim HR & finance.
               </p>
             </div>
           </FadeInSection>
 
           <div className="grid md:grid-cols-3 gap-8">
             <FadeInSection delay={0.1}>
-              <Card className="bg-card/50 backdrop-blur-xl border-white/10 p-8 hover:border-primary/50 transition-all duration-300 group">
-                <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Rocket size={32} className="text-primary" weight="duotone" />
+              <Card className="bg-card border-border p-8 hover:border-primary transition-all duration-300 group hover:shadow-lg">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Lightning size={28} className="text-primary" weight="duotone" />
                 </div>
-                <h4 className="text-2xl font-bold mb-4">Innovation</h4>
-                <p className="text-white/70 leading-relaxed">
-                  Push the boundaries of what's possible with cutting-edge technology and creative solutions.
+                <h4 className="text-xl font-bold mb-4 text-foreground">Mulai cepat</h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  Setup awal tidak sampai sejam. Langsung fokus ke yang penting: kelola tim dan operasional.
                 </p>
               </Card>
             </FadeInSection>
 
             <FadeInSection delay={0.2}>
-              <Card className="bg-card/50 backdrop-blur-xl border-white/10 p-8 hover:border-primary/50 transition-all duration-300 group">
-                <div className="w-16 h-16 rounded-2xl bg-ring/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Users size={32} className="text-ring" weight="duotone" />
+              <Card className="bg-card border-border p-8 hover:border-primary transition-all duration-300 group hover:shadow-lg">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Users size={28} className="text-primary" weight="duotone" />
                 </div>
-                <h4 className="text-2xl font-bold mb-4">Collaboration</h4>
-                <p className="text-white/70 leading-relaxed">
-                  Team up with talented individuals from diverse backgrounds and skill sets.
+                <h4 className="text-xl font-bold mb-4 text-foreground">Kolaborasi</h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  Admin dan karyawan akses terpisah, tapi sinkron. Approval cuti, payroll, semua transparan.
                 </p>
               </Card>
             </FadeInSection>
 
             <FadeInSection delay={0.3}>
-              <Card className="bg-card/50 backdrop-blur-xl border-white/10 p-8 hover:border-primary/50 transition-all duration-300 group">
-                <div className="w-16 h-16 rounded-2xl bg-accent/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <Target size={32} className="text-accent" weight="duotone" />
+              <Card className="bg-card border-border p-8 hover:border-primary transition-all duration-300 group hover:shadow-lg">
+                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Target size={28} className="text-accent" weight="duotone" />
                 </div>
-                <h4 className="text-2xl font-bold mb-4">Impact</h4>
-                <p className="text-white/70 leading-relaxed">
-                  Create solutions that make a real difference in communities and industries.
+                <h4 className="text-xl font-bold mb-4 text-foreground">Audit-friendly</h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  Laporan otomatis, data tersimpan rapi. Audit compliance jadi jauh lebih mudah.
                 </p>
               </Card>
             </FadeInSection>
@@ -203,34 +206,34 @@ function App() {
         </div>
       </ParallaxSection>
 
-      <ParallaxSection speed={0.5} className="py-32" id="schedule">
+      <ParallaxSection speed={0.5} className="py-32" id="cara-kerja">
         <div className="container mx-auto px-6">
           <FadeInSection>
             <div className="text-center mb-20">
-              <h3 className="text-5xl md:text-6xl font-bold mb-6">
-                Event <span className="text-gradient">Timeline</span>
+              <h3 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+                Cara <span className="text-gradient">Kerja</span>
               </h3>
-              <p className="text-xl text-white/70 max-w-2xl mx-auto">
-                Mark your calendars for an unforgettable experience
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Tiga langkah mudah untuk mulai kelola tim dengan lebih efisien
               </p>
             </div>
           </FadeInSection>
 
           <div className="max-w-4xl mx-auto space-y-6">
             <FadeInSection delay={0.1}>
-              <Card className="bg-card/50 backdrop-blur-xl border-white/10 p-8 hover:border-primary/50 transition-all duration-300">
+              <Card className="bg-card border-border p-8 hover:border-primary transition-all duration-300 hover:shadow-lg">
                 <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center flex-shrink-0">
-                    <Calendar size={32} className="text-primary" weight="duotone" />
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <span className="text-2xl font-bold text-primary">1</span>
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
-                      <h4 className="text-2xl font-bold">Opening Ceremony</h4>
-                      <Badge className="bg-primary/20 text-primary border-primary/30">Day 1</Badge>
+                      <h4 className="text-xl font-bold text-foreground">Modul siap</h4>
+                      <Badge className="bg-accent/10 text-accent border-accent/20">Setup</Badge>
                     </div>
-                    <p className="text-white/70 mb-3">March 15, 2024 • 09:00 AM</p>
-                    <p className="text-white/60">
-                      Kick off the competition with inspiring keynotes and team formation sessions.
+                    <p className="text-muted-foreground mb-3">Pilih modul yang perlu langsung</p>
+                    <p className="text-sm text-muted-foreground">
+                      Hanya aktifkan Absensi, atau ambil semua modul: Cuti, Payroll, Onboarding. Fleksibel sesuai kebutuhan.
                     </p>
                   </div>
                 </div>
@@ -238,19 +241,19 @@ function App() {
             </FadeInSection>
 
             <FadeInSection delay={0.2}>
-              <Card className="bg-card/50 backdrop-blur-xl border-white/10 p-8 hover:border-primary/50 transition-all duration-300">
+              <Card className="bg-card border-border p-8 hover:border-primary transition-all duration-300 hover:shadow-lg">
                 <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 rounded-2xl bg-ring/20 flex items-center justify-center flex-shrink-0">
-                    <Lightning size={32} className="text-ring" weight="duotone" />
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <span className="text-2xl font-bold text-primary">2</span>
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
-                      <h4 className="text-2xl font-bold">Competition Period</h4>
-                      <Badge className="bg-ring/20 text-ring border-ring/30">48 Hours</Badge>
+                      <h4 className="text-xl font-bold text-foreground">Onboarding</h4>
+                      <Badge className="bg-primary/10 text-primary border-primary/20">Konfigurasi</Badge>
                     </div>
-                    <p className="text-white/70 mb-3">March 15-17, 2024 • Non-stop</p>
-                    <p className="text-white/60">
-                      Build, iterate, and perfect your solutions with mentor support available 24/7.
+                    <p className="text-muted-foreground mb-3">Buat company + owner + trial atau subscribe</p>
+                    <p className="text-sm text-muted-foreground">
+                      Import data karyawan via CSV atau manual, atur role (admin/karyawan), lalu langsung jalan.
                     </p>
                   </div>
                 </div>
@@ -258,19 +261,19 @@ function App() {
             </FadeInSection>
 
             <FadeInSection delay={0.3}>
-              <Card className="bg-card/50 backdrop-blur-xl border-white/10 p-8 hover:border-primary/50 transition-all duration-300">
+              <Card className="bg-card border-border p-8 hover:border-primary transition-all duration-300 hover:shadow-lg">
                 <div className="flex items-start gap-6">
-                  <div className="w-16 h-16 rounded-2xl bg-accent/20 flex items-center justify-center flex-shrink-0">
-                    <Trophy size={32} className="text-accent" weight="duotone" />
+                  <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    <span className="text-2xl font-bold text-accent">3</span>
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-2">
-                      <h4 className="text-2xl font-bold">Final Presentations</h4>
-                      <Badge className="bg-accent/20 text-accent border-accent/30">Day 3</Badge>
+                      <h4 className="text-xl font-bold text-foreground">Audit-ready</h4>
+                      <Badge className="bg-accent/10 text-accent border-accent/20">Siap Pakai</Badge>
                     </div>
-                    <p className="text-white/70 mb-3">March 17, 2024 • 02:00 PM</p>
-                    <p className="text-white/60">
-                      Showcase your innovations to judges and compete for the grand prize.
+                    <p className="text-muted-foreground mb-3">Akses dashboard dan laporan otomatis</p>
+                    <p className="text-sm text-muted-foreground">
+                      Aktivitas terupdate real-time. Approval flow berjalan transparan. Laporan siap untuk audit.
                     </p>
                   </div>
                 </div>
@@ -280,47 +283,100 @@ function App() {
         </div>
       </ParallaxSection>
 
-      <ParallaxSection speed={0.8} className="py-32" id="prizes">
+      <ParallaxSection speed={0.8} className="py-32" id="paket">
         <div className="container mx-auto px-6">
           <FadeInSection>
             <div className="text-center mb-20">
-              <h3 className="text-5xl md:text-6xl font-bold mb-6">
-                Amazing <span className="text-gradient">Prizes</span>
+              <h3 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+                Paket <span className="text-gradient">Fleksibel</span>
               </h3>
-              <p className="text-xl text-white/70 max-w-2xl mx-auto">
-                Compete for over $50,000 in prizes and opportunities
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Pilih paket yang sesuai dengan kebutuhan tim Anda
               </p>
             </div>
           </FadeInSection>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <FadeInSection delay={0.2}>
-              <Card className="bg-card/50 backdrop-blur-xl border-white/10 p-8 text-center hover:border-primary/50 transition-all duration-300 hover:scale-105">
-                <div className="text-6xl mb-4">🥈</div>
-                <h4 className="text-xl font-bold mb-2 text-white/80">2nd Place</h4>
-                <div className="text-4xl font-bold text-gradient mb-4">$15,000</div>
-                <p className="text-white/60">Plus mentorship opportunities</p>
+            <FadeInSection delay={0.1}>
+              <Card className="bg-card border-border p-8 text-center hover:border-primary transition-all duration-300 hover:shadow-lg">
+                <div className="text-5xl mb-4">📦</div>
+                <h4 className="text-xl font-bold mb-2 text-foreground">Starter</h4>
+                <div className="text-3xl font-bold text-gradient mb-4">Rp 500K</div>
+                <p className="text-sm text-muted-foreground mb-6">/bulan, untuk tim kecil</p>
+                <ul className="space-y-3 text-left text-sm text-muted-foreground mb-8">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-0.5">✓</span>
+                    <span>Hingga 25 karyawan</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-0.5">✓</span>
+                    <span>Absensi & Cuti</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-0.5">✓</span>
+                    <span>Dashboard standar</span>
+                  </li>
+                </ul>
+                <Button variant="outline" className="w-full">Pilih Paket</Button>
+              </Card>
+            </FadeInSection>
+
+            <FadeInSection delay={0.05}>
+              <Card className="bg-gradient-to-b from-primary/10 to-card border-primary p-8 text-center transition-all duration-300 hover:shadow-xl relative">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <Badge className="bg-accent text-accent-foreground font-bold px-4 py-1">POPULAR</Badge>
+                </div>
+                <div className="text-6xl mb-4">🚀</div>
+                <h4 className="text-xl font-bold mb-2 text-foreground">Professional</h4>
+                <div className="text-4xl font-bold text-gradient mb-4">Rp 1.5JT</div>
+                <p className="text-sm text-muted-foreground mb-6">/bulan, untuk tim berkembang</p>
+                <ul className="space-y-3 text-left text-sm text-muted-foreground mb-8">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-0.5">✓</span>
+                    <span>Hingga 100 karyawan</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-0.5">✓</span>
+                    <span>Semua modul (Payroll, Onboarding)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-0.5">✓</span>
+                    <span>Approval flow custom</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-0.5">✓</span>
+                    <span>Priority support</span>
+                  </li>
+                </ul>
+                <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">Pilih Paket</Button>
               </Card>
             </FadeInSection>
 
             <FadeInSection delay={0.1}>
-              <Card className="bg-gradient-to-b from-primary/20 to-card/50 backdrop-blur-xl border-primary/50 p-8 text-center transition-all duration-300 hover:scale-105 glow-primary relative -mt-4 md:-mt-8">
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <Badge className="bg-accent text-accent-foreground font-bold px-4 py-1">WINNER</Badge>
-                </div>
-                <div className="text-7xl mb-4">🏆</div>
-                <h4 className="text-xl font-bold mb-2">1st Place</h4>
-                <div className="text-5xl font-bold text-gradient mb-4">$25,000</div>
-                <p className="text-white/80">Plus VC pitch opportunities</p>
-              </Card>
-            </FadeInSection>
-
-            <FadeInSection delay={0.2}>
-              <Card className="bg-card/50 backdrop-blur-xl border-white/10 p-8 text-center hover:border-primary/50 transition-all duration-300 hover:scale-105">
-                <div className="text-6xl mb-4">🥉</div>
-                <h4 className="text-xl font-bold mb-2 text-white/80">3rd Place</h4>
-                <div className="text-4xl font-bold text-gradient mb-4">$10,000</div>
-                <p className="text-white/60">Plus tech resources</p>
+              <Card className="bg-card border-border p-8 text-center hover:border-primary transition-all duration-300 hover:shadow-lg">
+                <div className="text-5xl mb-4">🏢</div>
+                <h4 className="text-xl font-bold mb-2 text-foreground">Enterprise</h4>
+                <div className="text-3xl font-bold text-gradient mb-4">Custom</div>
+                <p className="text-sm text-muted-foreground mb-6">Hubungi kami untuk penawaran</p>
+                <ul className="space-y-3 text-left text-sm text-muted-foreground mb-8">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-0.5">✓</span>
+                    <span>Unlimited karyawan</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-0.5">✓</span>
+                    <span>Custom integration</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-0.5">✓</span>
+                    <span>Dedicated support</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-0.5">✓</span>
+                    <span>On-premise option</span>
+                  </li>
+                </ul>
+                <Button variant="outline" className="w-full">Hubungi Kami</Button>
               </Card>
             </FadeInSection>
           </div>
@@ -331,53 +387,58 @@ function App() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
         <div className="container mx-auto px-6 relative">
           <FadeInSection>
-            <Card className="bg-gradient-to-br from-primary/20 to-accent/10 backdrop-blur-xl border-primary/30 p-12 md:p-16 text-center glow-primary">
-              <h3 className="text-4xl md:text-5xl font-bold mb-6">
-                Ready to <span className="text-gradient">Innovate</span>?
+            <Card className="bg-gradient-to-br from-primary/10 to-accent/5 border-primary/20 p-12 md:p-16 text-center shadow-xl">
+              <h3 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
+                Siap <span className="text-gradient">Efisienkan</span> Operasional HR?
               </h3>
-              <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                Join hundreds of innovators and start building the future today.
+              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+                Bergabung dengan ratusan perusahaan yang sudah mempercayai Arkav untuk kelola tim mereka.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-accent text-accent-foreground hover:bg-accent/90 glow-accent text-lg px-10 py-6 font-bold group"
+                  className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-10 py-6 font-bold group"
                 >
-                  Register for ARKAV 2024
+                  Mulai Trial Gratis
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" weight="bold" />
                 </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="text-lg px-10 py-6 font-semibold"
+                >
+                  Jadwalkan Demo
+                </Button>
               </div>
-              <div className="mt-8 flex items-center justify-center gap-6 text-sm text-white/60">
-                <div className="flex items-center gap-2">
-                  <MapPin size={20} weight="duotone" />
-                  Jakarta, Indonesia
-                </div>
-                <div className="flex items-center gap-2">
-                  <Calendar size={20} weight="duotone" />
-                  March 15-17, 2024
-                </div>
+              <div className="mt-8 text-sm text-muted-foreground">
+                Tidak perlu kartu kredit • Setup dalam 1 jam • Support tim lokal
               </div>
             </Card>
           </FadeInSection>
         </div>
       </section>
 
-      <footer className="py-16 border-t border-white/10">
+      <footer className="py-16 border-t border-border bg-muted/30">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
-              <h4 className="text-2xl font-bold text-gradient mb-2">ARKAV</h4>
-              <p className="text-white/60">Innovation Unleashed</p>
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+                  <span className="text-white font-bold text-sm">✨</span>
+                </div>
+                <h4 className="text-xl font-bold text-foreground">Arkav</h4>
+              </div>
+              <p className="text-muted-foreground">Human Capital Management</p>
             </div>
-            <div className="flex gap-8 text-sm text-white/60">
-              <a href="#" className="hover:text-white transition-colors">About</a>
-              <a href="#" className="hover:text-white transition-colors">Contact</a>
-              <a href="#" className="hover:text-white transition-colors">FAQ</a>
-              <a href="#" className="hover:text-white transition-colors">Sponsors</a>
+            <div className="flex gap-8 text-sm text-muted-foreground">
+              <a href="#" className="hover:text-foreground transition-colors">Tentang</a>
+              <a href="#" className="hover:text-foreground transition-colors">Kontak</a>
+              <a href="#" className="hover:text-foreground transition-colors">FAQ</a>
+              <a href="#" className="hover:text-foreground transition-colors">Blog</a>
             </div>
           </div>
-          <div className="mt-8 text-center text-sm text-white/40">
-            © 2024 ARKAV. All rights reserved.
+          <div className="mt-8 text-center text-sm text-muted-foreground">
+            © 2024 Arkav HCM. All rights reserved.
           </div>
         </div>
       </footer>

@@ -16,35 +16,35 @@
 }
 
 :root {
-  --background: oklch(0.12 0.08 275);
-  --foreground: oklch(1 0 0);
+  --background: oklch(0.98 0.01 240);
+  --foreground: oklch(0.20 0.02 240);
 
-  --card: oklch(0.18 0.10 280);
-  --card-foreground: oklch(1 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.20 0.02 240);
   
-  --popover: oklch(0.18 0.10 280);
-  --popover-foreground: oklch(1 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.20 0.02 240);
 
-  --primary: oklch(0.55 0.25 285);
+  --primary: oklch(0.50 0.18 240);
   --primary-foreground: oklch(1 0 0);
 
-  --secondary: oklch(0.35 0.15 275);
-  --secondary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.92 0.02 240);
+  --secondary-foreground: oklch(0.30 0.03 240);
 
-  --muted: oklch(0.25 0.08 280);
-  --muted-foreground: oklch(0.7 0.05 280);
+  --muted: oklch(0.95 0.01 240);
+  --muted-foreground: oklch(0.50 0.02 240);
 
-  --accent: oklch(0.72 0.20 45);
-  --accent-foreground: oklch(0.15 0 0);
+  --accent: oklch(0.62 0.20 35);
+  --accent-foreground: oklch(1 0 0);
 
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
 
-  --border: oklch(0.25 0.10 280);
-  --input: oklch(0.25 0.10 280);
-  --ring: oklch(0.75 0.15 195);
+  --border: oklch(0.90 0.01 240);
+  --input: oklch(0.90 0.01 240);
+  --ring: oklch(0.50 0.18 240);
 
-  --radius: 0.75rem;
+  --radius: 0.5rem;
 }
 
 @theme {
@@ -77,31 +77,30 @@
 }
 
 .hero-gradient {
-  background: radial-gradient(circle at 20% 50%, oklch(0.35 0.20 285) 0%, transparent 50%),
-              radial-gradient(circle at 80% 30%, oklch(0.40 0.18 195) 0%, transparent 50%),
-              radial-gradient(circle at 50% 80%, oklch(0.30 0.15 45) 0%, transparent 60%),
-              oklch(0.12 0.08 275);
+  background: radial-gradient(circle at 30% 40%, oklch(0.55 0.15 240 / 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 70% 60%, oklch(0.65 0.18 35 / 0.1) 0%, transparent 50%),
+              oklch(0.98 0.01 240);
 }
 
 .grid-pattern {
   background-image: 
-    repeating-linear-gradient(0deg, oklch(0.25 0.10 280 / 0.3) 0px, transparent 1px, transparent 40px, oklch(0.25 0.10 280 / 0.3) 41px),
-    repeating-linear-gradient(90deg, oklch(0.25 0.10 280 / 0.3) 0px, transparent 1px, transparent 40px, oklch(0.25 0.10 280 / 0.3) 41px);
+    repeating-linear-gradient(0deg, oklch(0.50 0.18 240 / 0.04) 0px, transparent 1px, transparent 60px, oklch(0.50 0.18 240 / 0.04) 61px),
+    repeating-linear-gradient(90deg, oklch(0.50 0.18 240 / 0.04) 0px, transparent 1px, transparent 60px, oklch(0.50 0.18 240 / 0.04) 61px);
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, oklch(0.75 0.25 285) 0%, oklch(0.75 0.15 195) 100%);
+  background: linear-gradient(135deg, oklch(0.50 0.18 240) 0%, oklch(0.60 0.20 220) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .glow-primary {
-  box-shadow: 0 0 40px oklch(0.55 0.25 285 / 0.5);
+  box-shadow: 0 4px 20px oklch(0.50 0.18 240 / 0.15);
 }
 
 .glow-accent {
-  box-shadow: 0 0 30px oklch(0.72 0.20 45 / 0.6);
+  box-shadow: 0 4px 20px oklch(0.62 0.20 35 / 0.25);
 }
 
 @media (prefers-reduced-motion: reduce) {
